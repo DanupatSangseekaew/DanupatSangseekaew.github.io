@@ -1,3 +1,4 @@
+/* สไตล์ทั่วไป */
 * {
     margin: 0;
     padding: 0;
@@ -5,41 +6,59 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+/* สไตล์ของ body */
 body {
     height: 100vh;
     background-color: #000;
+    /* กำหนดสีพื้นหลังเป็นสีดำ */
     background-image: url('images/background.jpg');
+    /* กำหนดภาพพื้นหลัง */
     background-size: cover;
+    /* ปรับขนาดภาพพื้นหลังให้ครอบคลุมพื้นที่ทั้งหมด */
     background-position: center;
+    /* จัดตำแหน่งภาพพื้นหลังตรงกลาง */
 }
 
+/* ลบรูปแบบรายการเริ่มต้น */
 li {
     list-style: none;
 }
 
+/* สไตล์ลิงก์ */
 a {
     text-decoration: none;
+    /* ลบขีดเส้นใต้จากลิงก์ */
     color: aliceblue;
+    /* กำหนดสีข้อความเป็นสี aliceblue */
     font-size: 1rem;
+    /* กำหนดขนาดตัวอักษร */
 }
 
 a:hover {
     color: orange;
+    /* เปลี่ยนสีข้อความเมื่อโฮเวอร์ */
 }
 
+/* สไตล์ของ header */
 header {
     position: relative;
     padding: 0 2rem;
+    /* เพิ่มการเสริมของหัวเรื่อง */
 }
 
+/* สไตล์ของ navbar */
 .navbar {
     width: 100%;
     height: 60px;
+    /* กำหนดความสูงของแถบเมนู */
     max-width: 1200px;
+    /* จำกัดความกว้างสูงสุดของแถบเมนู */
     margin: 0 auto;
+    /* จัดแถบเมนูแนวนอนตามแนวตั้ง */
     display: flex;
     align-items: center;
     justify-content: space-between;
+    /* จัดอิสระตำแหน่งของสมาชิกในแถบเมนู */
 }
 
 .navbar .logo a {
@@ -59,47 +78,74 @@ header {
     display: none;
 }
 
+/* สไตล์ของปุ่มการกระทำ */
 .action_btn {
     background-color: orange;
+    /* กำหนดสีพื้นหลังเป็นสีส้ม */
     color: aliceblue;
+    /* กำหนดสีข้อความ */
     padding: 0.5rem 1rem;
+    /* กำหนดขนาดของ padding */
     border: none;
+    /* ลบเส้นขอบ */
     outline: none;
+    /* ลบเส้นโค้ง */
     border-radius: 20px;
+    /* กำหนดรูปร่างของมุม */
     font-size: 0.8rem;
+    /* กำหนดขนาดตัวอักษร */
     font-weight: bold;
+    /* กำหนดความหนาของตัวอักษร */
     cursor: pointer;
+    /* เปลี่ยนรูปแบบเมาส์ */
     transition: transform 0.2s ease;
+    /* เพื่อทำให้มีการเปลี่ยนแปลงอย่างนุ่มนวล */
 }
 
 .action_btn:hover {
     transform: scale(1.05);
+    /* ปรับขนาดของปุ่มเมื่อโฮเวอร์ */
     color: aliceblue;
+    /* กำหนดสีข้อความ */
 }
 
 .action_btn:active {
     transform: scale(0.95);
+    /* ปรับขนาดของปุ่มเมื่อคลิก */
 }
 
+/* สไตล์ของเมนูแบบ dropdown */
 .dropdown_menu {
     position: absolute;
+    /* ตำแหน่งเป็น absolute */
     right: 2rem;
+    /* ขอบขวา */
     top: 60px;
+    /* ขอบบน */
     width: 300px;
+    /* กำหนดความกว้าง */
     height: 0;
+    /* กำหนดความสูงเริ่มต้นเป็น 0 */
     background: rgba(255, 255, 255, 0.1);
+    /* กำหนดสีพื้นหลัง */
     backdrop-filter: blur(15px);
+    /* เพิ่มเอฟเฟ็กต์ฟิลเตอร์ */
     border-radius: 10px;
+    /* กำหนดรูปร่างของมุม */
     overflow: hidden;
+    /* ซ่อนส่วนที่เกินของเนื้อหา */
     transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* เพื่อทำให้มีการเปลี่ยนแปลงอย่างนุ่มนวล */
 }
 
 .dropdown_menu.open {
     height: 240px;
+    /* กำหนดความสูงเมื่อเปิดเมนู */
 }
 
 .dropdown_menu li {
     padding: 0.7rem;
+    /* กำหนดการเสริมของรายการ */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -111,50 +157,75 @@ header {
     justify-content: center;
 }
 
-section#Home{
+/* สไตล์ของส่วนหน้าหลัก */
+section#Home {
     height: calc(100vh - 60px);
+    /* กำหนดความสูงของส่วนหน้าหลัก */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: aliceblue;
+    /* กำหนดสีข้อความ */
 }
 
-#Home h1{
+#Home h1 {
     font-size: 3rem;
+    /* กำหนดขนาดตัวอักษร */
     margin-bottom: 1rem;
+    /* กำหนดระยะห่างด้านล่าง */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้กับข้อความ */
 }
+
+#Home p {
+    font-size: 2rem; /* ปรับขนาดตัวอักษรเป็น 2rem */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* เพิ่มเงาให้กับข้อความ */
+}
+/* สไตล์สำหรับหน้าจอที่มีขนาดไม่เกิน 992px */
 
 @media (max-width: 992px) {
+
     .navbar .links,
     .navbar .action_btn {
         display: none;
+        /* ซ่อนเมนูและปุ่มการกระทำ */
     }
 
     .navbar .toggle_btn {
         display: block;
+        /* แสดงปุ่ม toggle */
     }
 
     .dropdown_menu {
         display: none;
+        /* ซ่อนเมนู dropdown */
         position: static;
+        /* เปลี่ยนตำแหน่งเป็น static */
         width: 100%;
+        /* กำหนดความกว้าง */
         height: auto;
+        /* กำหนดความสูง */
         background: none;
+        /* กำหนดสีพื้นหลัง */
         border-radius: 0;
+        /* กำหนดรูปร่างของมุม */
         overflow: visible;
+        /* แสดงส่วนที่เกินของเนื้อหา */
     }
 
     .dropdown_menu.open {
         display: block;
+        /* แสดงเมนู dropdown */
     }
 }
 
+/* สไตล์สำหรับหน้าจอที่มีขนาดไม่เกิน 576px */
 @media (max-width: 576px) {
-    .dropdown_menu{
+    .dropdown_menu {
         left: 2rem;
+        /* ขอบซ้าย */
         width: unset;
+        /* ยกเลิกการกำหนดความกว้าง */
     }
-
 }

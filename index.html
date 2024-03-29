@@ -1,49 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/styles.css" />
+    <!-- การกำหนดส่วนหัวของเอกสาร -->
+    <meta charset="UTF-8" /> <!-- กำหนดชุดอักขระเป็น UTF-8 เพื่อรองรับอักขระทั้งหมด -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> <!-- ระบุว่าเว็บไซต์นี้เหมาะสมกับ Internet Explorer เวอร์ชันใด -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- กำหนดขนาดและการเลื่อนของหน้าจอสำหรับอุปกรณ์ทุกชนิด -->
+    <!-- ลิงค์ไปยังไฟล์ CSS เพื่อใช้สไตล์ -->
+    <link rel="stylesheet" href="/css/styles.css" /> 
+    <!-- ลิงค์ไปยังไฟล์ CSS ของ Font Awesome เพื่อให้สามารถใช้ไอคอนได้ -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- กำหนดหัวเรื่องของเอกสาร -->
     <title>Home page</title>
 </head>
-
 <body>
+    <!-- ส่วนของ header ซึ่งประกอบไปด้วย navbar และ toggle button -->
     <header>
         <div class="navbar">
+            <!-- โลโก้ของเว็บไซต์ -->
             <div class="logo"><a href="#">Web Dev Creative</a></div>
+            <!-- ลิงค์สำหรับการนำทาง -->
             <ul class="links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="game.html">Game</a></li>
                 <li><a href="curriculum Vitae.html">Curriculum Vitae</a></li>
             </ul>
+            <!-- ปุ่มสำหรับเริ่มต้นการใช้งาน -->
             <a href="#" class="action_btn">Get Started</a>
+            <!-- ปุ่ม toggle สำหรับเปิดปิดเมนู dropdown -->
             <div class="toggle_btn"><i class="fa-solid fa-bars"></i></div>
         </div>
+        <!-- เมนู dropdown ที่จะแสดงเมื่อคลิกที่ปุ่ม toggle -->
         <div class="dropdown_menu">
             <ul>
-                <li><a href="home">Home</a></li>
-                <li><a href="game">Game</a></li>
-                <li><a href="curriculum Vitae">Curriculum Vitae</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="game.html">Game</a></li>
+                <li><a href="curriculum Vitae.html">Curriculum Vitae</a></li>
                 <li><a href="#" class="action_btn">Get Started</a></li>
             </ul>
         </div>
     </header>
 
     <main>
+        <!-- ส่วนหลักของหน้าเว็บ -->
         <section id="Home">
+            <!-- หัวเรื่องของหน้า -->
             <h1>Welcome</h1>
+            <!-- เนื้อหาหรือคำอธิบายเพิ่มเติม -->
             <p>
-                It is a personal website that contains both games and user profiles.
+                สวัสดีมิตรรักแฟนเพลงทุกท่าน ในเว็บไซต์นี้ มีทั้งเนื้อหา ผู้ใช้ เกมที่ผู้ใช้นำมาประกอบการส่งงาน
             </p>
-
         </section>
     </main>
 
+    <!-- สคริปต์ JavaScript เพื่อให้ปุ่ม toggle ทำงานโดยเปิด-ปิดเมนู dropdown -->
     <script>
         const toggleBtn = document.querySelector('.toggle_btn');
         const toggleBtnIcon = document.querySelector('.toggle_btn i');
@@ -59,5 +70,4 @@
         };
     </script>
 </body>
-
 </html>

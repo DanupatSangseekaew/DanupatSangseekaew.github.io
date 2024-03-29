@@ -1,0 +1,265 @@
+/* นำเข้าฟอนต์จาก Google - Open Sans */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif; /* ตั้งค่าฟอนต์เริ่มต้นเป็น Open Sans */
+}
+
+/* การจัดรูปแบบสำหรับ body */
+body {
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #5E63BA; /* ตั้งค่าสีพื้นหลังของ body */
+    padding-top: 60px; /* เพิ่มการเสริมด้านบนของ body */
+}
+
+/* การจัดรูปแบบสำหรับ header */
+header {
+    position: fixed; /* ติดตั้งตำแหน่ง header ที่ด้านบน */
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 0 2rem; /* เพิ่มการเสริมด้านของ header */
+    background-color: #fff; /* ตั้งค่าสีพื้นหลังของ header */
+    z-index: 1000; /* ตั้งค่า z-index สูงเพื่อให้ header อยู่ด้านบนสุด */
+}
+
+/* การจัดรูปแบบสำหรับ navigation links */
+ul.links {
+    display: flex;
+    justify-content: center; /* จัดเรียง navigation links ตรงกลาง */
+    list-style-type: none;
+    padding: 10px 0; /* เพิ่มการเสริมของ navigation links */
+    background-color: #fff; /* ตั้งค่าสีพื้นหลังของ navigation links */
+    border-bottom: 1px solid #ccc; /* เส้นขอบด้านล่าง */
+}
+
+ul.links li {
+    margin: 0 10px; /* เพิ่มการเสริมระหว่าง menu items */
+}
+
+ul.links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 5px 10px; /* ขนาดของปุ่ม navigation */
+    border-radius: 5px;
+    transition: all 0.3s ease; /* เพื่อทำให้มีการเปลี่ยนแปลงอย่างนุ่มนวล */
+    background-color: #fff; /* สีพื้นหลังของปุ่ม */
+}
+
+ul.links a:hover {
+    background-color: #04e1fa; /* เมื่อเม้าส์ชี้ */
+}
+
+/* การจัดรูปแบบสำหรับ container หลัก */
+.container {
+    display: flex;
+    width: 850px; /* ตั้งค่าความกว้างของ container */
+    gap: 70px; /* เพิ่มระยะห่างระหว่างองค์ประกอบ */
+    padding: 60px 40px; /* เพิ่มการเสริมของ container */
+    background: #fff; /* ตั้งค่าสีพื้นหลังของ container */
+    border-radius: 10px; /* เพิ่มรูปร่างของขอบ */
+    align-items: flex-end; /* จัดองค์ประกอบที่ด้านล่าง */
+    justify-content: space-between; /* จัดองค์ประกอบอย่างเท่าเทียมกัน */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* เพิ่มเงา */
+}
+
+/* การจัดรูปแบบสำหรับ hangman box */
+.hangman-box img {
+    user-select: none; /* ปิดการเลือกของผู้ใช้ */
+    max-width: 270px; /* ตั้งค่าความกว้างสูงสุดของรูปภาพ */
+}
+
+.hangman-box h1 {
+    font-size: 1.45rem; /* ตั้งค่าขนาดฟอนต์ */
+    text-align: center; /* จัดให้อยู่ตรงกลาง */
+    margin-top: 20px; /* เพิ่มการเสริมด้านบน */
+    text-transform: uppercase; /* แปลงข้อความเป็นตัวพิมพ์ใหญ่ */
+}
+
+/* การจัดรูปแบบสำหรับ word display */
+.game-box .word-display {
+    gap: 10px; /* เพิ่มระยะห่างระหว่างตัวอักษร */
+    list-style: none;
+    display: flex; /* แสดงตัวอักษรในแนวนอน */
+    flex-wrap: wrap; /* ห่อตัวอักษร */
+    justify-content: center; /* จัดตัวอักษรตรงกลาง */
+    align-items: center; /* จัดตัวอักษรแนวตั้ง */
+}
+
+.word-display .letter {
+    width: 28px; /* ตั้งค่าความกว้างของแต่ละตัวอักษร */
+    font-size: 2rem; /* ตั้งค่าขนาดฟอนต์ */
+    text-align: center; /* จัดให้อยู่ตรงกลาง */
+    font-weight: 600; /* ตั้งค่าน้ำหนักฟอนต์ */
+    margin-bottom: 40px; /* เพิ่มการเสริมด้านล่าง */
+    text-transform: uppercase; /* แปลงข้อความเป็นตัวพิมพ์ใหญ่ */
+    border-bottom: 3px solid #000; /* เพิ่มเส้นใต้ */
+}
+
+.word-display .letter.guessed {
+    margin: -40px 0 35px; /* ปรับระยะห่างสำหรับตัวอักษรที่เดาแล้ว */
+    border-color: transparent; /* ซ่อนเส้นใต้สำหรับตัวอักษรที่เดาแล้ว */
+}
+
+/* การจัดรูปแบบสำหรับ game hints และ guesses */
+.game-box h4 {
+    text-align: center; /* จัดให้อยู่ตรงกลาง */
+    font-size: 1.1rem; /* ตั้งค่าขนาดฟอนต์ */
+    font-weight: 500; /* ตั้งค่าน้ำหนักฟอนต์ */
+    margin-bottom: 15px; /* เพิ่มการเสริมด้านล่าง */
+}
+
+.game-box h4 b {
+    font-weight: 600; /* ตั้งค่าน้ำหนักฟอนต์ */
+}
+
+.game-box .guesses-text b {
+    color: #ff0000; /* ตั้งค่าสีข้อความ */
+}
+
+/* การจัดรูปแบบสำหรับ keyboard */
+.game-box .keyboard {
+    display: flex; /* แสดงปุ่มในแนวนอน */
+    gap: 5px; /* เพิ่มระยะห่างระหว่างปุ่ม */
+    flex-wrap: wrap; /* ห่อปุ่ม */
+    margin-top: 40px; /* เพิ่มการเสริมด้านบน */
+    justify-content: center; /* จัดปุ่มตรงกลาง */
+}
+
+:where(.game-modal, .keyboard) button {
+    color: #fff; /* ตั้งค่าสีข้อความ */
+    border: none; /* ลบเส้นขอบ */
+    outline: none; /* ลบเส้นขอบ */
+    cursor: pointer; /* ตั้งค่าเคอร์เซอร์เป็นตัวชี้ */
+    font-size: 1rem; /* ตั้งค่าขนาดฟอนต์ */
+    font-weight: 600; /* ตั้งค่าน้ำหนักฟอนต์ */
+    border-radius: 4px; /* เพิ่มรูปร่างของขอบ */
+    text-transform: uppercase; /* แปลงข้อความเป็นตัวพิมพ์ใหญ่ */
+    background: #5E63BA; /* ตั้งค่าสีพื้นหลัง */
+
+}
+
+/* การจัดรูปแบบสำหรับปุ่มในแถบคีย์บอร์ด */
+.keyboard button {
+    padding: 7px; /* เพิ่มการเสริมของปุ่ม */
+    width: calc(100% / 9 - 5px); /* ตั้งค่าความกว้างของปุ่ม */
+}
+
+.keyboard button[disabled] {
+    pointer-events: none; /* ไม่ให้สามารถคลิกปุ่มที่ถูกปิดใช้งาน */
+    opacity: 0.6; /* ลดความโปร่งแสง */
+}
+
+:where(.game-modal, .keyboard) button:hover {
+    background: #8286c9; /* เมื่อเม้าส์ชี้ */
+}
+
+/* การจัดรูปแบบสำหรับโมดัล */
+.game-modal {
+    position: fixed; /* ติดตั้งตำแหน่งการแสดงโมดัล */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* ตั้งค่าความโปร่งแสงเริ่มต้น */
+    pointer-events: none; /* ไม่ให้มีการกระทำกับส่วนนี้ */
+    background: rgba(0,0,0,0.6); /* ตั้งค่าสีพื้นหลังและความโปร่งแสงของโมดัล */
+    display: flex; /* แสดงโมดัลเป็น Flex */
+    align-items: center; /* จัดให้อยู่ตรงกลาง */
+    justify-content: center; /* จัดให้อยู่ตรงกลาง */
+    z-index: 9999; /* ตั้งค่าระดับ z-index เพื่อให้โมดัลอยู่ด้านหน้า */
+    padding: 0 10px; /* เพิ่มการเสริมด้านของโมดัล */
+    transition: opacity 0.4s ease; /* เพิ่มการเปลี่ยนแปลงของโมดัล */
+}
+
+.game-modal.show {
+    opacity: 1; /* ตั้งค่าความโปร่งแสงเมื่อโมดัลถูกแสดง */
+    pointer-events: auto; /* อนุญาตให้มีการกระทำกับโมดัล */
+    transition: opacity 0.4s 0.4s ease; /* เพิ่มการเปลี่ยนแปลงของโมดัล */
+}
+
+/* การจัดรูปแบบสำหรับเนื้อหาของโมดัล */
+.game-modal .content {
+    padding: 30px; /* เพิ่มการเสริมของเนื้อหาโมดัล */
+    max-width: 420px; /* ตั้งค่าความกว้างสูงสุดของเนื้อหาโมดัล */
+    width: 100%;
+    border-radius: 10px; /* เพิ่มรูปร่างของขอบโมดัล */
+    background: #fff; /* ตั้งค่าสีพื้นหลังของเนื้อหาโมดัล */
+    text-align: center; /* จัดเนื้อหาอยู่ตรงกลาง */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1); /* เพิ่มเงาให้กับเนื้อหาโมดัล */
+}
+
+.game-modal img {
+    max-width: 130px; /* ตั้งค่าความกว้างสูงสุดของรูปภาพในโมดัล */
+    margin-bottom: 20px; /* เพิ่มการเสริมด้านล่างของรูปภาพในโมดัล */
+}
+
+.game-modal img[src="images/victory.gif"] {
+    margin-left: -10px; /* ปรับระยะห่างซ้ายของรูปภาพที่เป็นรางวัล */
+}
+
+.game-modal h4 {
+    font-size: 1.53rem; /* ตั้งค่าขนาดฟอนต์ของหัวข้อ */
+}
+
+.game-modal p {
+    font-size: 1.15rem; /* ตั้งค่าขนาดฟอนต์ของเนื้อหา */
+    margin: 15px 0 30px; /* เพิ่มการเสริมด้านบนและด้านล่างของเนื้อหา */
+    font-weight: 500; /* ตั้งค่าน้ำหนักฟอนต์ของเนื้อหา */
+}
+
+.game-modal p b {
+    color: #5E63BA; /* ตั้งค่าสีข้อความ */
+    font-weight: 600; /* ตั้งค่าน้ำหนักฟอนต์ของข้อความ */
+}
+
+.game-modal button {
+    padding: 12px 23px; /* เพิ่มการเสริมของปุ่ม */
+}
+
+/* ส่วนของ media queries เมื่อหน้าจอมีขนาดเล็กกว่า 782px */
+@media (max-width: 782px) {
+    .container {
+        flex-direction: column; /* จัดเรียงแนวดิ่ง */
+        padding: 30px 15px; /* เพิ่มการเสริมของคอนเทนเนอร์ */
+        align-items: center; /* จัดเรียงอยู่ตรงกลาง */
+    }
+    .hangman-box img {
+        max-width: 200px; /* ตั้งค่าความกว้างสูงสุดของรูปภาพ */
+    }
+    .hangman-box h1 {
+        display: none; /* ซ่อนหัวเรื่อง */
+    }
+    .game-box h4 {
+        font-size: 1rem; /* ตั้งค่าขนาดฟอนต์ของหัวข้อ */
+    }
+    .word-display .letter {
+        margin-bottom: 35px; /* เพิ่มการเสริมด้านล่างของตัวอักษร */
+        font-size: 1.7rem; /* ตั้งค่าขนาดฟอนต์ของตัวอักษร */
+    }
+    .word-display .letter.guessed {
+        margin: -35px 0 25px; /* ปรับระยะห่างสำหรับตัวอักษรที่เดาแล้ว */
+    }
+    .game-modal img {
+        max-width: 120px; /* ตั้งค่าความกว้างสูงสุดของรูปภาพในโมดัล */
+    }
+    .game-modal h4 {
+        font-size: 1.45rem; /* ตั้งค่าขนาดฟอนต์ของหัวข้อ */
+    }
+    .game-modal p {
+        font-size: 1.1rem; /* ตั้งค่าขนาดฟอนต์ของเนื้อหา */
+    }
+    .game-modal button {
+        padding: 10px 18px; /* เพิ่มการเสริมของปุ่ม */
+    }
+}
